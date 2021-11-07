@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "server": "nodemon ./bin/www"
   },
+  "engines": {
+    "node": "16.13.0"
+  },
   "dependencies": {
     "config": "^3.3.6",
     "connect-flash": "^0.1.1",

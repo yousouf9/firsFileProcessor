@@ -1,0 +1,7 @@
+{
+    "dbConfig": {
+      "host": "sample_prod_db",
+      "port": 456,
+      "dbName": "sample"
+    }
+}

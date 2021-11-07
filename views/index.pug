@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  .container.py-3
+    .row
+      .col-sm-8 
+        form.row.row-cols-lg-auto.g-2.align-items-center(method="post" action="/api/v1/sendFile"  enctype ="multipart/form-data")
+          .col-12
+              label.form-label(for='file') Select file to upload
+              input#formFileSm.form-control(type='file', name="file" aria-describedby='inputGroupFileAddon04', aria-label='Upload' required)
+          .col-12
+            label.form-label(for='inlineFormSelectPref') File type
+            select#inlineFormSelectPref.form-select(required, name="data_type")
+              option(selected='') Choose...
+              option(value='mtn_data') MTN DATA
+              option(value='mtn_voice') MTN VOICE
+              option(value='mtn_sms') MTN SMS
+              option(value='mtn_voucher') MTN VOUCHER
+              option(value='glo_voice') GLO VOICE
+              option(value='glo_sms') GLO SMS
+              option(value='glo_data') GLO DATA
+              option(value='glo_voucher') GLO VOUCHER
+              option(value='etisalat_sms') ETISALAT SMS
+              option(value='etisalat_data') ETISALAT DATA
+              option(value='etisalat_voice') ETISALAT VOICE
+              option(value='etisalat_voucher') ETISALAT VOUCHER
+              option(value='airtel_data') AIRTEL DATA
+              option(value='airtel_voice') AIRTEL VOICE
+              option(value='airtel_sms') AIRTEL SMS
+              option(value='airtel_voucher') AIRTEL VOUCHER
+          .col-12
+            label.form-label.mb-lg-4.mb-sm-2
+            button.btn.btn-outline-secondary.mb-sm-2(type='submit' style="display:block") Upload
+          .col-12
+            label.form-label.mb-lg-4.mb-sm-2
+            a.btn.btn-outline-danger.mb-sm-2#delete(href="/api/v1/deleteAll" style="display:block") Empty Database
+      .col-sm-4 
+        .card.border-info.mb-3
+          .card-header Usage Instruction
+          .card-body
+            h6.card-title Support file extension for upload
+            p.card-text
+              | Only txt file extension is supported right now. and all text files must be comma seperated Tabs are not allow as of now.
+              code supported extension .txt
+            h6.card-title File Conversions
+            p.card-text
+              | All uploaded file contents are stored on atlas mongodb server as JSON files and the txt file is deleted immidiately after conversion is completed
+              | appropriate url for accessing content are provided to clients for data access
+            h6.card-title Database content deletions
+            p.card-text
+              | Once you are done inseting and copying data you can delete the whole database content safely!
+  .table-responsive
+    table.table
+

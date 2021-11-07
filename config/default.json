@@ -1,0 +1,7 @@
+{
+      "dbConfig": {
+        "host": "mongodb://localhost/sample",
+        "port": 456,
+        "dbName": "sample"
+      }
+}

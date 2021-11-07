@@ -1,4 +1,6 @@
 var createError = require('http-errors');
+const compression = require('compression');
+const cors = require('cors');
 var express = require('express');
 var path = require('path');
 const session = require('express-session');
@@ -21,10 +23,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // Set up session
+app.set('trust proxy', 1);
 app.use(session({
   secret: "process.env.SECRET_KEY",
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 
 //Flashing messages unto request object.
@@ -40,6 +43,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(compression())
+app.use(cors());
 require('./startup/db');
 app.use('/', indexRouter);
 

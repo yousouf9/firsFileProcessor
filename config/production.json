@@ -3,5 +3,7 @@
       "host": "sample_prod_db",
       "port": 456,
       "dbName": "sample"
-    }
+    },
+    "redis_host": "redis://127.0.0.1:6379",
+    "redis_tls":"false"
 }

@@ -1,0 +1,8 @@
+database
+username:portal_2021
+password:VBZVwXGo4dnKqGzH
+
+
+mongoimport --uri mongodb+srv://portal_2021:VBZVwXGo4dnKqGzH@cluster0.1shwp.mongodb.net/portal --collection uploads --type json --file "C:\Users\23481\Desktop\uploads.json" --jsonArray
+
+mongodb+srv://portal_2021:VBZVwXGo4dnKqGzH@cluster0.1shwp.mongodb.net/portal?retryWrites=true&w=majority

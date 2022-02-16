@@ -118,7 +118,7 @@ router.post('/api/v1/sendFile',  async (req, res) => {
     
           const directory = path.join(`${__dirname}`, `../public/temp/`)
           const txtfile = path.join(`${__dirname}`, `../public/temp/${req.file.filename}`)
-          const dataInJSON = dataToJson.csv({ filePath: txtfile }).toJson();
+          const dataInJSON = dataToJson.csv({ filePath: txtfile}).toJson();
       
 
           const isInserted = await inputDataType(dataInJSON, req.body.data_type);

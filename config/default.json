@@ -1,7 +1,9 @@
 {
       "dbConfig": {
-        "host": "mongodb://localhost/sample",
+        "host": "mongodb://ibrahim:27017,ibrahim:27018,ibrahim:27019/sample?replicaSet=rs",
         "port": 456,
         "dbName": "sample"
-      }
+      },
+      "redis_host": "redis://127.0.0.1:6379",
+      "redis_tls":"false"
 }

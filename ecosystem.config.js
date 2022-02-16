@@ -7,7 +7,7 @@ module.exports = {
       autorestart: true,
       watch: true,
       watch_delay:1000,
-      ignore_watch:['node_modules', 'uncaughtExceptions.log'],
+      ignore_watch:['node_modules', 'uncaughtExceptions.log', '.git'],
       max_memory_restart: "1G",
       exec_mode: "fork",
       instance_var: "INSTANCE_ID"
